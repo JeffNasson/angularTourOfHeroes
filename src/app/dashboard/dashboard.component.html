@@ -1,3 +1,23 @@
-<p>
-  dashboard works!
-</p>
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let hero of heroes" class="col-1-4"
+    routerLink='/detail/{{hero.id}}'
+  >
+  <!-- You're using Angular interpolation binding within the *ngFor repeater to insert the current iteration's hero.id into each routerLink. -->
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<!-- The template presents a grid of hero name links.
+
+The *ngFor repeater creates as many links as are in the component's heroes array. -->
+
+
+
+<!-- The class is similar to the HeroesComponent class.
+
+It defines a heroes array property.
+The constructor expects Angular to inject the HeroService into a private heroService property.
+The ngOnInit() lifecycle hook calls getHeroes. -->
